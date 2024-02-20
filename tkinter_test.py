@@ -56,7 +56,7 @@ def check_for_winner():
     elif board[0][2] == board[1][1] == board[2][0] and board[0][2] != 0:
         winner = board[0][2]
 
-    if all([all(row) for row in board]) and winner is None:
+    if all(all(row) for row in board) and winner is None:
         winner = "tie"
 
     if winner:

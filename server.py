@@ -94,7 +94,7 @@ async def check_for_winner() -> str:
     elif params.board[0][2] == params.board[1][1] == params.board[2][0] and params.board[0][2] != 0:
         winner = params.board[0][2]
 
-    if all([all(row) for row in params.board]) and winner is None:
+    if all(all(row) for row in params.board) and winner is None:
         winner = "tie"
 
     return winner
